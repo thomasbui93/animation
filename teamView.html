@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Teams View</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/hover-min.css"/>
+	<link rel="stylesheet" href="css/flat-ui.min.css"/>
+	<script src="js/jquery-1.11.1.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/flat-ui.min.js"></script>
+	<link rel="stylesheet" href="css/animate.css"/>
+	<style>
+		body{
+
+		}
+		.eachTeam{
+			position: relative;
+			background: #eff0f2;
+			border-radius: 6px;
+			border: none;
+			font-family: "Lato", Helvetica, Arial, sans-serif;
+		}
+		.header{
+			border-bottom-right-radius: 0px;
+			border-bottom-left-radius: 0px;
+			font: bold 23px/40px "Helvetica Neue", Helvetica, Arial, sans-serif;
+		}
+		.eachTeam li{
+			padding: 5px;
+			font-size: 15px;
+		}
+		.addMember{
+			position: relative;
+			right: 10px;
+		}
+		.memberList{
+			position: absolute;
+			width: 80%;
+			height: auto;
+			margin-top: 1%;
+			background: #eff0f2;
+			float: right;
+			right: 0px;
+		}
+		.memberList>li{
+			position: relative;
+			height: 30px;
+			line-height: 20px;
+			border-bottom: 2px solid #ffffff;
+		}
+		.memberInfo{
+			position: absolute;
+			width: 200px;
+			right: -201px;
+			height: auto;
+			display: none;
+			background: #eff0f2;
+		}
+		.member-title{
+			width: 100%;
+			text-align: center;
+			border-bottom-right-radius: 0px;
+			border-bottom-left-radius: 0px;
+		}
+		.selectedMember{
+			background-color: #cccccc;
+		}
+		.tasklist-item{
+			position: relative;
+			padding-left: 20px;
+			border-bottom: 1px solid #ffffff;
+			font-size: 18px;
+			background: #BDC3C7;
+		}
+		.taskList{
+			position: relative;
+			width: 90%;
+			border-left: 2px solid #ffffff;
+			border-top: 2px solid #ffffff;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="container">
+		<!--===============================Menu Bar======================================-->
+		<div class="row">
+			<nav>
+				<ul>
+					<li><a href="projectView.html"><button class="btn btn-primary" title="Home"><span class="glyphicon glyphicon-home"></span></button></a></li>
+					<li><a href="teamView.html"><button class="btn btn-primary" title="Team View"><span class="glyphicon glyphicon-user"></span></button></a></li>
+					<li><a href="taskView.html"><button class="btn btn-primary" title="Task View"><span class="glyphicon glyphicon-briefcase"></span></button></a></li>
+					<li><a href="index.html"><button class="btn btn-primary" title="Log Out"><span class="glyphicon glyphicon-log-out"></span></button></a></li>
+					<li><a href="#"><button class="btn btn-primary" title="Setting" id="setting"><span class="glyphicon glyphicon-cog"></span></button></a></li>
+					<li><a href="adminPage.html"><button class="btn btn-primary">Admin</button></a></li>
+				</ul>
+			</nav>
+		</div>
+		<!--===============================Content======================================-->
+		<div class="row">
+			<div class="teamContainer col-md-12">
+				<div class="eachTeam animated fadeInDown ">
+					<a class="btn btn-inverse btn-block btn-large header">Team 1</a>
+					<ul class="general-list">
+						<li class="projects"><span class="glyphicon glyphicon-plus" style="padding-right: 10px"></span><strong>Projects :</strong> <div class="tag-div animated rotateInDownLeft"><span class="glyphicon glyphicon-tag"></span> Khoa Bui</div></li>
+							<ul class="projectList" style="display: none">
+								<li class="projectInputContainer form-group"><input type="text" class="projectValue form-control "></li>
+								<li><button type="button"class="addproject btn btn-inverse">Add</button></li>
+							</ul>
+						<li class="members"><span class="glyphicon glyphicon-plus" style="padding-right: 10px"></span><strong>Members : </strong><strong class="countMembers badge">0</strong></li>
+
+						<li class="tasks"><span class="glyphicon glyphicon-plus" style="padding-right: 10px"></span><strong>Task : <span class="badge">2</span></strong></li>
+							<ul class="taskList pull-right animated flipInY " style="display: none">
+								<li class="tasklist-item"><span class='glyphicon glyphicon-bookmark'>&nbsp</span>To do 03/04/14 First</li>
+								<li class="inputTask form-group"><input type="text" class="taskValue form-control"></li>
+								<li><input type="button" value="Add Task" class="addTask btn btn-sm btn-inverse"></li>
+							</ul>
+					</ul>
+					<ul class="memberList animated flipInY" style="display: none" data-show="false">
+						<div class="btn btn-info btn-sm btn-block member-title"><strong>Member List</strong></div>
+						<li class="animated flipInX" data-team="Black Pearl" data-task="Some Heart"><span>Jack Sparrow</span><span class="glyphicon glyphicon-arrow-right pull-right" style="right: 20px"></span></li>
+						<li  class="animated flipInX" data-team="Black Heart" data-task="Some Pearl"><span>Jack Jill</span><span class="glyphicon glyphicon-arrow-right pull-right" style="right: 20px"></span></li>
+						<li class="animated flipInX" data-team="Black Team" data-task="Some Data"><span>Jack Frost</span><span class="glyphicon glyphicon-arrow-right pull-right" style="right: 20px"></span></li>
+						<ul class="memberInfo animated rotateInDownLeft">
+							<li class="btn btn-info btn-block btn-large member-title" ><span class="glyphicon glyphicon-user pull-left"></span><strong >Member Information</strong> </li>
+							<li class="memberName"><strong>Name:</strong> <span>Jack Sparrow</span></li>
+							<li class="memberTeam"><strong>Team:</strong> <span>1,2,3</span></li>
+							<li class="memberTask"><strong>Task:</strong><span>To do list 1,2</span></li>
+						</ul>
+						<button class="addMember pull-right btn btn-inverse" type="button"><span class="glyphicon glyphicon-plus"></span></button>
+					</ul>
+					<div class="deleteButton"><span class="glyphicon glyphicon-remove"></span></div>
+				</div><!--end eachTeam-->
+					
+				<div class="newEachTeam text-center">
+					<button type="button" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span></button>
+					<br>
+					<span><u>New Teams</u></span>
+				</div><!--end newEachTeam-->			
+			</div><!--end teamContainer-->
+		</div><!--end row-->
+	</div><!--end container-->
+	<div class="dialog-container" style="display: none">
+		<form class="addMemberBox">
+			<h4 class="text-center">Add New Member</h4>
+			<br>
+			<div class="input-group ">
+				<span class="input-group-addon">Name</span>
+				<input type="text" class="form-control form-name" placeholder="User Name" required>
+			</div>
+			<br>
+			<div class="input-group">
+				<span class="input-group-addon">Task</span>
+				<input type="text" class="form-control form-task" placeholder="Task Name" required>
+			</div>
+			<br>
+			<div class="input-group">
+				<span class="input-group-addon ">Team</span>
+				<input type="text" class="form-control form-team" placeholder="Team Name" required>
+			</div>
+			<br>
+			<div class="input-group error has-error" style="display: none">
+				<span class="input-group-addon ">Error</span>
+				<button type="button" class="form-control form-team" value="Team Name">
+					Some information is missing.
+				</button>
+			</div>
+			<br>
+			<button class="btn btn-info pull-right save" type="button">Save</button>
+		</form>
+	</div>
+	<div class="changePassword-container">
+		<form class="changePassword">
+			<h3>Change Email</h3>
+			<br>
+			<div class="input-group ">
+				<span class="input-group-addon">Change Email: </span>
+				<input type="text" class="form-control email" placeholder="New Email" required>
+			</div>
+			<br>
+			<div class="input-group">
+				<span class="input-group-addon">Old Password</span>
+				<input type="password" class="form-control oldPass" placeholder="Old Password" required>
+			</div>
+			<br>
+			<div class="input-group">
+				<span class="input-group-addon ">New Password</span>
+				<input type="password" class="form-control newPass" placeholder="New Pasword" required>
+			</div>
+			<br>
+			<div class="input-group error" >
+				<span class="input-group-addon  ">Confirm Password</span>
+				<input type="password" class="form-control confirmPass" placeholder="Confirm Password" required>
+			</div>
+			<br>
+			<button class="btn btn-warning pull-right cancel">Cancel</button>
+			<button class="btn btn-primary pull-right save" type="button">Save</button>
+		</form>
+	</div>
+	<div class="confirm-delete">
+		<div>Do you really want to delete this team?</div><br>
+		<button class="pull-left btn btn-danger yes">Yes</button>
+		<button class="pull-right btn btn-warning">No</button>
+	</div>
+
+	<script>
+		$(document).ready(function() {
+			//Toggles
+			$('.projects').click(function(event) {
+				$(this).siblings('.projectList').toggle('slow');
+			});
+			$('.members').click(function(event) {
+				var list = $(this).parents(".eachTeam").find('.memberList');
+				var task =  $(this).parents(".eachTeam").find('.taskList');
+				var subList = list.find('ul');
+				console.log(list.data('show'))
+				if(list.data('show')){
+					subList.fadeOut('easein');
+					list.removeClass('flipInY').addClass('flipOutY');
+
+					//	list.fadeOut('easin');
+					list.data('show', false);
+				}
+				else{
+					task.hide();
+					list.show();
+					list.addClass('flipInY').removeClass('flipOutY');
+					//list.show('easein');
+					list.data('show', true);
+				}
+			});
+
+			$('.tasks').click(function(event) {
+
+				var list = $(this).parents(".eachTeam").find('.memberList');
+				var subList = list.find('ul');
+				if(list.data('show')){
+					subList.fadeOut('easein');
+					list.removeClass('flipInY').addClass('flipOutY');
+
+					//	list.fadeOut('easin');
+					list.data('show', false);
+				}
+				$(this).siblings('.taskList').toggle('slow');
+			});
+			$(".memberList>li").hover(function(){
+				$(this).find('span:eq(1)').removeClass('glyphicon-arrow-right ').addClass('glyphicon-remove-sign');
+			},function(){
+				$(this).find('span:eq(1)').removeClass('glyphicon-remove-sign').addClass('glyphicon-arrow-right ');
+			}).on('click', function(){
+				$(this).siblings().removeClass('selectedMember');
+				$(this).addClass('selectedMember');
+				var index = $(this).parent('.memberList').children('li').index(this);
+				var top = $(this).height()*index;
+				$(this).siblings('.memberInfo').children('.memberName').find('span').text($(this).text())
+				if($(this).data('team')){
+					$(this).siblings('.memberInfo').children('.memberTeam').find('span').text($(this).data('team'))
+				}
+				if($(this).data('task')){
+					$(this).siblings('.memberInfo').children('.memberTask').find('span').text($(this).data('task'))
+				}
+				$(this).siblings('.memberInfo').css('top', top).fadeIn('easein');
+					});
+			$('.memberList>li span').click(function(){
+				var el = $(this).parent();
+				el.fadeOut('easein');
+				el.remove();
+			});
+			$('.addMember').click(function(){
+				$('.dialog-container').fadeIn('easein');
+				var insertBeforeTarget = $(this).siblings('ul');
+				var el = $(this).siblings('li:eq(0)').clone(true, true);
+				el.removeClass("selectedMember");
+				$('.save').click(function(event){
+					$(this).children().removeClass('.has-error');
+					event.preventDefault();
+					var name = $.trim($(this).parent().find('.form-name').val());
+					var task = $.trim($(this).parent().find('.form-task').val());
+					var team = $.trim($(this).parent().find('.form-team').val());
+					if(name==''|| task==''|| team==''){
+						$(".error").fadeIn('easein');
+					}
+					else{
+						$('.error').fadeOut('easein');
+						$('.dialog-container').fadeOut('easein');
+						el.children('span:eq(0)').text(name);
+						el.data('team', team);
+						el.data('task', task);
+						el.insertBefore(insertBeforeTarget);
+					}
+				});
+			});
+			$('.dialog-container').click(function(){
+				$(this).fadeOut('easein');
+				$(this).find('input[type="text"]').val('');
+			});
+			$('.dialog-container input[type="text"]').click(function(event){
+				event.stopPropagation();
+			});
+			$('.addMemberBox').click(function(event){
+				event.stopPropagation()
+			})
+			//Add number of project in to Project title
+			$(".addproject").click(function(){
+				var value = $(this).parent().siblings('.projectInputContainer').children('.projectValue').val();
+				if(value!==''){
+					//var count = $(this).parent().parent().children().length-1;
+					//$(this).parent().parent().prepend("<li>" +"Project : "+ value + "</li>");
+					$(this).parent().siblings('.projectInputContainer').children('.projectValue').val('');
+					var target = $(this).parent().parent().siblings('.projects');
+					var ele = $('<div class="tag-div animated rotateInDownLeft"><span class="glyphicon glyphicon-tag"></span>'+value+'</div>');
+					ele.bind('click', function(event){
+						event.stopPropagation();
+						$(this).fadeOut(1600);
+						$(this).remove();
+					})
+					target.append(ele);
+				}
+			});
+			$('.tag-div').on('click',function(){
+				$(this).fadeOut('slow');
+				$(this).remove();
+			})
+			$('.deleteButton').click(function(){
+				var el = $(this).parent();
+				$('.confirm-delete').fadeIn('slow');
+				$('.yes').bind('click', function(){
+					el.animate({
+						top: '-700px'
+					}, 500, function(){
+						el.remove();
+					});
+					$('.confirm-delete').fadeOut('slow', function(){
+						$('.yes').unbind('click');
+					});
+				});
+
+			});
+			$('.confirm-delete').bind('click', function(){
+				$('.confirm-delete').fadeOut('slow', function(){
+					$('.yes').unbind('click');
+				});
+			})
+			//Add tasks
+			$('.addTask').click(function(event) {
+				var value = $(this).parent().siblings('.inputTask').children('.taskValue').val();
+				var insertPoint = $(this).parent().siblings('.inputTask');
+				if(value !==''){
+					var count = $(this).parent().parent().children().length-1;
+					$("<li class='tasklist-item animated flipInX'><span class='glyphicon glyphicon-bookmark'>&nbsp;</span>"+value+"</li>").insertBefore(insertPoint);
+					$(this).parent().parent().siblings('.tasks').html('<span class="glyphicon glyphicon-plus" style="padding-right: 10px"></span><strong>Task</strong> : '+'<span class="badge">'+count+'</span>');
+					$(this).parent().siblings('.inputTask').children('.taskValue').val('');
+				}
+
+			});
+			$('.taskValue').on('keyup keydown keypress', function(event){
+				if(event.keyCode==13){
+					$(this).parents('.taskList').find('.addTask').trigger('click');
+				}
+			});
+			$('.projectValue').on('keyup keydown keypress', function(event){
+				if(event.keyCode==13){
+					$(this).parents('.projectList').find('.addproject').trigger('click');
+				}
+			})
+			$('.newEachTeam').click(function(){
+				$('.memberList').fadeOut('easein');
+				$('.memberInfo').fadeOut('easein');
+				var index = $('.eachTeam').length+1;
+				var skeleton = $('.eachTeam:eq(0)').clone(true, true);
+				skeleton.find('.header').text('Team '+ index);
+				skeleton.find('.projects').html('<span class="glyphicon glyphicon-plus" style="padding-right: 10px"></span><strong>Project </strong>: ');
+				skeleton.find('.members').html('<span class="glyphicon glyphicon-plus" style="padding-right: 10px"></span><strong>Members : </strong><strong class="countMembers">0</strong>' );
+				skeleton.find('.memberList').children('.member-item').remove();
+				skeleton.find('input[type="text"]').val('');
+				skeleton.find('.tasklist-item').remove();
+				skeleton.find(".projectList").hide();
+				skeleton.find(".memberList").hide();
+				skeleton.find(".taskList").hide();
+				skeleton.insertBefore('.newEachTeam');
+			});
+		});
+	</script>
+	<script>
+		$('#setting').on('click', function(){
+			$('.changePassword-container').fadeIn('easein');
+			$('.save').bind('click', function(){
+				$(this).text('Saved').removeClass('btn-primary').addClass('btn-success');
+				$('.changePassword-container').fadeOut('easein', function(){
+					$('.save').text('Save').removeClass('btn-success').addClass('btn-primary').unbind('click');
+				});
+			})
+		});
+		$('.cancel').bind('click', function(){
+			$('.changePassword input').val('');
+			$('.changePassword-container').fadeOut('easein');
+			$('.changePassword-container').children().removeClass('has-error');
+		})
+		$('.changePassword input').on('blur',function(){
+			var input = $.trim($(this).val());
+			if(input==''){
+				$(this).parent().addClass('has-error');
+			}
+			else{
+				$(this).parent().removeClass('has-error');
+			}
+		});
+	</script>
+<script>
+</script>
+</body>
+</html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Task View</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/main.css">
+	<script src="js/jquery-1.11.1.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="css/flat-ui.min.css"/>
+	<link rel="stylesheet" href="css/animate.css"/>
+	<style>
+		.taskHeader{
+			border-bottom-left-radius: 0px;
+			border-bottom-right-radius: 0px;
+		}
+		.taskEachBox{
+			border-top-left-radius: 2px;
+			border-top-right-radius: 2px;
+		}
+		li .form-control{
+			border: none;
+		}
+	</style>
+	
+</head>
+<body>
+	<div class="container">
+		<!--===============================Menu Bar======================================-->
+		<div class="row">
+			<nav>
+				<ul>
+					<li><a href="projectView.html"><button class="btn btn-primary"><span class="glyphicon glyphicon-home"></span></button></a></li>
+					<li><a href="teamView.html"><button class="btn btn-primary"><span class="glyphicon glyphicon-user"></span></button></a></li>
+					<li><a href="taskView.html"><button class="btn btn-primary"><span class="glyphicon glyphicon-briefcase"></span></button></a></li>
+					<li><a href="index.html"><button class="btn btn-primary"><span class="glyphicon glyphicon-log-out"></span></button></a></li>
+					<li><a href="#"><button class="btn btn-primary" id="setting"><span class="glyphicon glyphicon-cog"></span></button></a></li>
+					<li><a href="adminPage.html"><button class="btn btn-primary">Admin</button></a></li>
+				</ul>
+			</nav>
+		</div>
+		<!--===============================Content======================================-->
+		<div class="row">
+			<div class="taskContainer">
+				<div class="taskEachBox" style="display: none">
+					<div class="delete-button" data-show="false"><span class=" glyphicon glyphicon-remove"></span></div>
+					<div class="taskHeader text-center btn btn-inverse btn-block"><strong>To Do 07/10/15</strong></div>
+					<div class="taskFolder">
+						<ul class="sortable">
+						</ul>
+					</div>
+					<div class="center">
+						<button type="submit" class="newTask btn btn-primary">New Task</button>
+					</div>
+
+				</div>
+				<div class="taskEachBox">
+					<div class="delete-button" data-show="false"><span class="glyphicon glyphicon-remove"></span></div>
+					<div class="taskHeader text-center btn btn-inverse"><strong>To Do 07/10/15</strong></div>
+					<!--List tasks-->
+					<div class="taskFolder">
+						<ul class="taskList sortable">
+							<li>First<span class="glyphicon glyphicon-ok check"></span>
+								<ul style="display: none" data-show="false">
+									<li >some</li>
+									<li>someelse</li>
+									<li class="form-group"><input type="text" class="form-control"/></li>
+									<button class="btn btn-primary addNode">Add</button>
+								</ul>
+							</li>
+							<li>Second<span class="glyphicon glyphicon-ok check"></span>
+								<ul style="display: none" data-show="false">
+									<li>some</li>
+									<li>someelse</li>
+									<li class="form-group"><input type="text" class="form-control"/></li>
+									<button class="btn btn-primary addNode">Add</button>
+								</ul></li>
+							<li>Third<span class="glyphicon glyphicon-ok check"></span>
+								<ul style="display: none" data-show="false">
+									<li>some</li>
+									<li>someelse</li>
+									<li class="form-group"><input type="text" class="form-control"/></li>
+									<button class="btn btn-primary addNode">Add</button>
+								</ul></li>
+							<li>Forth<span class="glyphicon glyphicon-ok check"></span>
+								<ul style="display: none" data-show="false">
+									<li>some</li>
+									<li>someelse</li>
+									<li class="form-group"><input type="text" class="form-control"/></li>
+									<button class="btn btn-primary addNode">Add</button>
+								</ul></li>
+							<li>Fifth<span class="glyphicon glyphicon-ok check"></span>
+								<ul style="display: none" data-show="false">
+									<li>some</li>
+									<li>someelse</li>
+									<li class="form-group"><input type="text" class="form-control"/></li>
+									<button class="btn btn-primary addNode">Add</button>
+								</ul></li>
+						</ul>
+					</div>
+					<div class="center">
+						<button type="submit" class="newTask btn btn-primary">New Task</button>
+					</div>
+				</div>
+				<div class="taskEachBox">
+					<div class="delete-button" data-show="false"><span class=" glyphicon glyphicon-remove"></span></div>
+					<div class="taskHeader text-center btn btn-inverse btn-block"><strong>To Do 07/10/15</strong></div>
+					<div class="taskFolder">
+						<ul class="sortable">
+						</ul>
+					</div>
+					<div class="center">
+						<button type="submit" class="newTask btn btn-primary">New Task</button>
+					</div>
+
+				</div>
+				<div class="taskEachBox new">
+					<div class="center ">
+						<button class="newToDo btn btn-primary">
+							<span class="glyphicon glyphicon-plus"></span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="changePassword-container">
+		<form class="changePassword">
+			<h3>Change Email</h3>
+			<br>
+			<div class="input-group ">
+				<span class="input-group-addon">Change Email: </span>
+				<input type="text" class="form-control email" placeholder="New Email" required>
+			</div>
+			<br>
+			<div class="input-group">
+				<span class="input-group-addon">Old Password</span>
+				<input type="password" class="form-control oldPass" placeholder="Old Password" required>
+			</div>
+			<br>
+			<div class="input-group">
+				<span class="input-group-addon ">New Password</span>
+				<input type="password" class="form-control newPass" placeholder="New Pasword" required>
+			</div>
+			<br>
+			<div class="input-group error" >
+				<span class="input-group-addon  ">Confirm Password</span>
+				<input type="password" class="form-control confirmPass" placeholder="Confirm Password" required>
+			</div>
+			<br>
+			<button class="btn btn-warning pull-right cancel">Cancel</button>
+			<button class="btn btn-primary pull-right save" type="button">Save</button>
+		</form>
+	</div>
+
+	<script src="js/jquery-ui-1.11.2/jquery-ui.min.js"></script>
+	<script type="text/javascript">
+		$('.ui-sortable-handle ul li').addClass('animated flipInX');
+		$(function() {
+		    $( ".sortable" ).sortable();
+		    $( ".sortable" ).disableSelection();
+  		});
+		$('.glyphicon-ok').on('click', function(e){
+			e.stopPropagation();
+			var targetRemove =  $(this).parents('.taskEachBox');
+			var childIndex = $('')
+			var child = $(this).parents('.taskFolder ul');
+			$(this).parent().fadeOut(1000, function(){
+				$(this).remove();
+				var count = child.children().length;
+				console.log(count);
+				if(count == 0){
+					targetRemove.animate({
+						top: '-800px'
+					}, 1000, function(){
+						$(this).remove();
+					})
+				}
+			});
+		});
+		$('.taskList li').click(function(){
+				event.stopPropagation();
+			if($(this).find('ul').data('show')==false){
+				$(this).find('ul').fadeIn(1000);
+				$(this).find('ul').data('show', true);
+			}
+			else if($(this).find('ul').data('show')==true){
+				$(this).find('ul').fadeOut(1000);
+				$(this).find('ul').data('show', false);
+			}
+		});
+  		$('.newTask').click(function(event) {
+			var el = $('.taskEachBox:eq(1)').find('.taskList li:eq(0)').clone(true);
+			el.find('.form-group').siblings().not(':last-child').remove();
+			event.stopPropagation();
+			$(this).parents('.taskEachBox').find('ul.sortable').append(el);
+			el.show('slow');
+  		});
+		$('.delete-button').hide();
+		$('.taskEachBox').hover(function(){
+			var del = $(this).find('.delete-button');
+			if(del.data('show')==false){
+				del.animate({
+					right: '-30px'
+				}, 'easein').fadeIn('easein');
+				del.data('show',true);
+			}
+			else{
+				del.fadeOut('easein').animate({
+					right: '0px'
+				}, 'easein');
+				del.data('show', false);
+			}
+
+		});
+		$('.delete-button').click(function(){
+			var removeEl = $(this).parent();
+			if ($(this).css('opacity')==1){
+				removeEl.animate({
+					top: '-500px'
+				}, 1000, function(){
+					this.remove();
+				});
+			}
+		});
+		$('#setting').on('click', function(){
+			$('.changePassword-container').fadeIn('easein');
+			$('.save').bind('click', function(){
+				$(this).text('Saved').removeClass('btn-primary').addClass('btn-success');
+				$('.changePassword-container').fadeOut('easein', function(){
+					$(this).find('input').val('');
+					$(this).find('.has-error').removeClass('has-error');
+					$('.save').text('Save').removeClass('btn-success').addClass('btn-primary').unbind('click');
+				});
+			})
+		});
+		$('.cancel').bind('click', function(){
+			$('.changePassword input').val('');
+			$('.changePassword-container').fadeOut('easein');
+			$('.changePassword-container').children().removeClass('has-error');
+		})
+		$('.changePassword input').on('blur',function(){
+			var input = $.trim($(this).val());
+			if(input==''){
+				$(this).parent().addClass('has-error');
+			}
+			else{
+				$(this).parent().removeClass('has-error');
+			}
+		});
+		$('li').on('click', function(e){
+			e.stopPropagation();
+		})
+		$('.addNode').on('click', function(event){
+			event.stopPropagation();
+			var value = $.trim($(this).prev().find('input').val());
+			var insertTarget = $(this).prev();
+			if(value!==''){
+				$('<li class="animated flipInX">'+value+'</li>').insertBefore(insertTarget);
+				$(this).prev().find('input').val('');
+			}else{
+
+			}
+		});
+		$('.check').hover(function(){
+			$(this).removeClass('glyphicon-ok').addClass('glyphicon-remove');
+		}, function(){
+			$(this).removeClass('glyphicon-remove').addClass('glyphicon-ok');
+		});
+		$('.newToDo').on('click', function(){
+			var skeleton = $('.taskEachBox:eq(0)').clone(true, true);
+			var len = $('.taskEachBox').length;
+			var insertPoint = $(this).parents('.taskEachBox');
+			skeleton.find('taskHeader').text('To do List'+ new Date().getDate());
+			skeleton.insertBefore(insertPoint);
+			skeleton.show('easein');
+		});
+		$('.form-control').on('keyup keydown keypress', function(event){
+			if(event.keyCode===13){
+				$(this).parent().siblings('.addNode').trigger('click');
+			}
+
+		})
+	</script>
+</body>
+</html>

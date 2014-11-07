@@ -1,0 +1,344 @@
+/*----------------------------------index Page------------------------------*/
+
+.glass {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	background-color: white;
+	opacity: 0.9;
+	content: ' ';
+
+}
+.mainDialog {
+	border: solid 1px black;
+	overflow: hidden;
+	border-radius: 10px;
+	vertical-align: middle;
+	margin-top: 30%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*----------------------------------Admin Page------------------------------*/
+nav ul li {
+	display: inline-block;
+	margin-right: 20px;
+	margin-top: 10px;
+}
+
+nav ul li:last-child {
+	float: right;
+}
+
+.boxAddUser {
+	padding: 20px;
+	background-color: #eff0f2;
+}
+
+.boxAddUser form .control-label {
+	text-align: left;
+}
+.userEachBox {
+	background-color:  #eff0f2;
+	padding: 20px;
+	margin-bottom: 10px;
+	position: relative;
+}
+
+.sign {
+	position: absolute;
+	top: 0;
+	right: 0;
+	display : none;
+
+}
+
+.sign button{
+	-webkit-border-radius: 0 !important;
+	-moz-border-radius: 0 !important;
+	border-radius: 0 !important;
+}
+
+/*----------------------------------Task View------------------------------*/
+.clearLeft{
+	overflow: hidden;
+	clear: both;
+}
+.taskEachBox{
+	position: relative;
+	border: solid 1px #CCcccc;
+	width: 25%;
+	float: left;
+	margin: 20px;
+	padding-bottom: 20px;
+	box-shadow: 2px 2px 2px #cccccc;
+}
+.taskList{
+	position: relative;
+	overflow-y: auto;
+	max-height: 300px;
+}
+.taskHeader {
+	clear: both;
+	position: relative;
+	width: 100%;
+	height: 50px;
+	background-color: #069;
+	color: #ffffff;
+	top: 0px;
+	text-align: center;
+	line-height: 50px;
+	font-size: 1.3em;
+}
+
+
+.taskIconDelete {
+	float: right;
+}
+
+.taskFolder {
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+.taskFolder li {
+	border: solid 1px #C0C0C0;
+	border-radius: 2px;
+	padding: 3px;
+	list-style: none;
+	margin: 10px;
+}
+
+.taskFolder li:hover {
+	cursor: move;
+}
+
+.taskFolder li span {
+	float: right;
+	color: #008040;
+	cursor: pointer;
+}
+
+.new {
+	border : 1px solid #CCcccc !important;
+}
+.new button{
+	width: 150px;
+	height: 150px;
+}
+
+.center {
+	text-align: center;
+}
+
+.newToDo{
+	margin-top: 45%;
+}
+
+.sortable{
+	padding: 0px;
+}
+/*----------------------------------Team View------------------------------*/
+.eachTeam {
+	width: 28%;
+	float: left;
+	border: solid 1px #CCcccc;
+	border-radius: 10px;
+	margin: 20px;
+	background-color: rgba(204, 204,204, 0.1);
+}
+
+.newEachTeam {
+	margin : 20px;
+	float: left;
+	width: 28%;
+	padding-top: 20px;
+}
+
+.eachTeam h3{
+	margin-top: 10px;
+	font-weight: bold;
+}
+
+.eachTeam ul{
+	list-style: none;
+	padding: 0px;
+}
+
+.eachTeam ul li{
+	padding-left: 10px;
+}
+
+/*----------------------------------Project View------------------------------*/
+.eachProject{
+	background-color: #eff0f2;
+	float: left;
+	border-radius: 10px;
+	margin: 20px;
+	width: 28%;
+}
+
+.eachProject ul {
+	padding: 0px;
+}
+
+.eachProject ul li{
+	list-style: none;
+	margin: 10px;
+}
+/*----------------------------------Password---------------*/
+.changePassword-container
+{
+	display: none;
+	position: fixed;
+	background: rgba(0,0,0,0.7);
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+}
+.changePassword{
+	position: relative;
+	width: 500px;
+	height: 500px;
+	top: 50%;
+	left: 50%;
+	margin-top: -250px;
+	margin-left: -250px;
+	background: #ffffff;
+	padding: 20px;
+}
+
+.dialog-container{
+	position: fixed;
+	background: rgba(0,0,0,0.7);
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+}
+.addMember{
+	position: relative;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.addMemberBox{
+	position: relative;
+	width: 500px;
+	height: 450px;
+	top: 50%;
+	left: 50%;
+	margin-top: -225px;
+	margin-left: -250px;
+	background: #ffffff;
+	padding-top: 10px;
+}
+.addMemberBox> div{
+	width: 70%;
+	position: relative;
+	left: 15%;
+}
+.save{
+	position: relative;
+	float: right;
+	right: 15%;
+}
+.eachTeam:hover .deleteButton{
+	right: -60px;
+	display: block;
+}
+.confirm-delete{
+	display: none;
+	position: absolute;
+	width: 300px;
+	height: 200px;
+	top: 50%;
+	left: 50%;
+	margin-left: -150px;
+	margin-top: -100px;
+	background: #ECF0F1;
+	font-size: 1.1em;
+	padding: 20px;
+
+}
+.dialog-container{
+	position: fixed;
+	background: rgba(0,0,0,0.7);
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+}
+.addMember{
+	position: relative;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.save{
+	position: relative;
+	float: right;
+	right: 15%;
+}
+.deleteButton{
+	display: none;
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	right: 0px;
+	background: #E74C3C;
+	color: #ffffff;
+	top: 50%;
+	margin-top: -15px;
+	text-align: center;
+	-webkit-transition: all 1s;
+	-moz-transition: all 1s;
+	-ms-transition: all 1s;
+	-o-transition: all 1s;
+	transition: all 1s;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+.eachTeam:hover .deleteButton{
+	right: -30px;
+	display: block;
+}
+
+.projects a{
+	position: relative;
+	margin-left: 2px;
+	height: 20px;
+}
+.tag-div{
+	position: relative;
+	height: 25px;
+	line-height: 25px;
+	color: #ffffff;
+	background: #3498db;
+	width: auto;
+	padding-left: 2px;
+	border-radius: 3px;
+	display: inline-block;
+	margin-left: 2px;
+	margin-top: 2px;
+	padding-right: 5px;
+}
+.delete-button{
+	position: absolute;
+	float:right;
+	width: 30px;
+	height: 30px;
+	background: #E74C3C;
+	line-height: 30px;
+	text-align: center;
+	color: #ffffff;
+	top: 50%;
+	margin-top: -15px;
+	right: 0px;
+}
+.container{
+	width: 100%;
+	height: 80px;
+	background: #2f4154;
+}
