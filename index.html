@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Project Management Web Page</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/flat-ui.min.css"/>
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/animate.css"/>
+	<style>
+		body{
+			background:#1abc9c;
+		}
+	.login{
+		padding: 0px 0px 0px 0px;
+		background:#1abc9c;
+		height: 100%;
+		width: 100%;
+	}
+		.login-screen{
+			height: 100%;
+			width: 100%;
+		}
+	</style>
+	
+</head>
+<body>
+	
+	<div class="login">
+		<div class="login-screen">
+			<div class="login-form animated fadeInDown">
+				<div class="form-group">
+					<input type="text" class="form-control login-field" value="" placeholder="Enter your name" id="login-name">
+					<label class="login-field-icon glyphicon glyphicon-user"></label>
+				</div>
+				<div class="form-group">
+					<input type="password" class="form-control login-field" value="" placeholder="Password" id="login-pass">
+					<label class="login-field-icon glyphicon glyphicon-lock" for="login-pass"></label>
+				</div>
+				<a class="btn btn-primary btn-lg btn-block" href="#" id="signIn">Log in</a>
+				<a class="login-link" href="#">Lost your password?</a>
+			</div>
+		</div>
+	</div>
+		
+
+	<script src="js/jquery-1.11.1.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script>
+			  	$("#signIn").click(function () {
+				    var btn = $(this);
+			        btn.button('loading')
+			        setTimeout(function () {
+			            btn.button('reset')
+			        }, 3000);
+					setTimeout(function(){
+						location.replace("/Project%20Animation/web%20Implement%20group%2021/projectView.html");
+					}, 3000);
+		    	});
+
+	</script>
+</body>
+</html>
